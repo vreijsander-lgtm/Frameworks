@@ -1,0 +1,27 @@
+body{
+    background: #4ac1f7;
+}
+#headers{
+    background: #4f4f4f;
+    border: #4e4e4e;
+    padding: 2.5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 100px;
+    color:white;
+}
+.names_div{
+    background: #4f4f4f;
+    border: #4e4e4e;
+    padding: 1%;
+    border-radius: 100px;
+    text-decoration: none !important;
+    color: white;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+#image_of_pokemon{
+    scale: 4;
+    image-rendering: pixelated;
+    pointer-events: none;
+}

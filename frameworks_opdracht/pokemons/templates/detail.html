@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <title>{{ pokemons.name }}</title>
+    <link rel="stylesheet" href="{% static 'pokemons/css.css' %}">
 </head>
 <body>
-<h1> {{ pokemons.name }}</h1>
-<h2> {{ pokemons.description}} </h2>
-<img id="image_of_pokemon">
+<center>
+<h1 class="all_details"> {{ pokemons.name }}</h1>
+<h2 class="all_details"> {{ pokemons.description}} </h2><br><br><br><br><br>
+<img class="all_details" id="image_of_pokemon" alt="Pokemon"><br><br><br><br><br><br>
 Back to <a href="/pokemons">all pokemons</a>
+    </center>
 </body>
 </html>
-<script lang="js">
-  const current_pokemon = {{ pokemons.id }};
-  const image = document.getElementById('image_of_pokemon')
-  fetch(`https://pokeapi.co/api/v2/pokemon/${current_pokemon}`)
-  .then(function(response){
-    return response.text()
-  })
-  .then(function(data){
-    document.getElementById('image_of_pokemon').src = data.sprites.front_default
-  })
+<script>
+    let current_pokemon=  "{{ pokemons.name }}";
+
+    fetch(`https://pokeapi.co/api/v2/pokemon/${current_pokemon}`)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            document.getElementById("image_of_pokemon").src =
+                data.sprites.front_default;
+        });
 </script>

@@ -1,15 +1,21 @@
+
 <!DOCTYPE html>
 <html>
+{% load static %}
 <head>
   <title>All</title>
-  <link rel="stylesheet" href="css.css">
+  <link rel="stylesheet" href="{% static 'pokemons/css.css' %}">
 </head>
+
 <body>
+<h5><a href="/admin">Admin</a></h5>
+<center>
+<h1><div id="headers">Pokedex</div></h1>
 <ul>
   {% for x in pokemons %}
-    <li><a href="detail/{{ x.id }}">{{ x.name }}</a></li>
+    <div class="names_div"><a href="detail/{{ x.id }}" style="text-decoration: none; color: white;">{{ x.name }}</a></div><br>
   {% endfor %}
 </ul>
-
+</center>
 </body>
 </html>
