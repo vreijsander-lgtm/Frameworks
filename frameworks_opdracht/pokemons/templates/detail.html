@@ -23,7 +23,6 @@ Back to <a href="/pokemons">all pokemons</a>
             return response.json();
         })
         .then(function(data) {
-            document.getElementById("image_of_pokemon").src =
-                data.sprites.front_default;
+            document.getElementById("image_of_pokemon").src = data.sprites.front_default;
         });
 </script>
