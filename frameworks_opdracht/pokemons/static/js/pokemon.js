@@ -41,21 +41,17 @@ document.addEventListener("DOMContentLoaded", async function () {
         const matches = pokenames
             .filter(function (name) {
                 return name.startsWith(search);
-            })
-            .slice(0, 10);
+            }).slice(0, 10);
 
         matches.forEach(function (name) {
             const option = document.createElement("option");
             option.value = name;
-
             datalist.appendChild(option);
         });
     });
 
     nameInput.addEventListener("change", async function () {
-        const input = nameInput.value
-            .toLowerCase()
-            .trim();
+        const input = nameInput.value.toLowerCase().trim();
 
         if (!pokenames.includes(input)) {
             return;
@@ -79,15 +75,13 @@ document.addEventListener("DOMContentLoaded", async function () {
             );
 
             if (description) {
-                description_in.value = description.flavor_text
-                    .replace(/\n/g, " ")
-                    .replace(/\f/g, " ");
+                description_in.value = description.flavor_text.replace(/\n/g, " ").replace(/\f/g, " ");
             }
         } catch (error) {
             print(error)
         }
     });
 });
-function capitalizeFirstLetter(val) {
-    return String(val).charAt(0).toUpperCase() + String(val).slice(1);
-}
+// function capitalizeFirstLetter(val) {
+//     return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+// }
